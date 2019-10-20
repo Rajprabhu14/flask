@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home page</title>
+    <script type="text/javascript" src="{{ url_for('static', filename='hello.js') }}"></script>
+</head>
+<body>
+    <!-- <input type="button" value="Say Hello" onclick="sayHello()"> -->
+    {% if user_check %}
+        <label for="label">Logged in as {{username}}</label>
+        <br/>
+        <b><a href="/logout">Click here to logout</a></b>
+    {% else %}
+        <label for="">You're not Logged in</label>
+        <br/>
+        <b><a href="/login">Click here to login</a></b>
+    
+    {% endif%}
+</body>
+</html>
